@@ -8,3 +8,7 @@ Release
 _release
 *__Win32_*
 /innosetup/installs
+*.stamp*
+CMakeCache.txt
+cmake_install.cmake
+CMakeFiles/
