@@ -85,12 +85,17 @@ static const char *linkRuntime(){
 		int start=0,end;
 		Type *t=Type::void_type;
 		if( !isalpha( s[0] ) ){ start=1;t=typeof( s[0] ); }
-		for( int k=1;k<s.size();++k ){
+
+		int k;
+		for( k=1;k<s.size();++k ){
 			if( !isalnum( s[k] ) && s[k]!='_' ) break;
 		}
 		end=k;
+
 		DeclSeq *params=d_new DeclSeq();
 		string n=s.substr( start,end-start );
+
+		k = 0;
 		while( k<s.size() ){
 			Type *t=typeof(s[k++]);
 			int from=k;
